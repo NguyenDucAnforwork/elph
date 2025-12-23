@@ -8,6 +8,7 @@ from math import inf
 import sys
 import random
 import os
+import matplotlib.pyplot as plt
 
 sys.path.insert(0, '..')
 
@@ -168,15 +169,18 @@ def run(args):
             print_model_params(model)
         for epoch in range(args.epochs):
             t0 = time.time()
-            loss = train_func(model, optimizer, train_loader, args, device)
+            train_loss = train_func(model, optimizer, train_loader, args, device)
+            train_losses = []
+            val_losses = []
             
             # Tính validation loss
             val_loss = validate_func(model, val_loader, args, device)
-            
+            train_losses.append(train_loss)
+            val_losses.append(val_loss)
             # Log train_loss và val_loss mỗi epoch (không cần chờ eval_steps)
             if args.wandb:
                 wandb.log({
-                    f'rep{rep}_train_loss': loss,
+                    f'rep{rep}_train_loss': train_loss,
                     f'rep{rep}_val_loss': val_loss,
                     'epoch': epoch
                 })
@@ -208,6 +212,21 @@ def run(args):
                                f'{100 * val_res:.2f}%, Test: {100 * test_res:.2f}%, epoch time: {time.time() - t0:.1f}'
                     print(key)
                     print(to_print)
+        
+        plt.figure(figsize=(8, 5))
+        plt.plot(range(1, args.epochs + 1), train_losses, label="Train Loss")
+        plt.plot(range(1, args.epochs + 1), val_losses, label="Validation Loss")
+        plt.xlabel("Epoch")
+        plt.ylabel("MSE Loss")
+        plt.title("Learning Curve")
+        plt.legend()
+        plt.grid(True)
+        plt.tight_layout()
+
+        # Save and log plot to wandb
+        plt.savefig("learning_curve.png")
+        wandb.log({"learning_curve": wandb.Image("learning_curve.png")})
+
         if args.reps > 1:
             results_list.append([test_res, val_res, train_res])
             print_results_list(results_list)
