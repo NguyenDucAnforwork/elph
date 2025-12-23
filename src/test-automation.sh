@@ -15,8 +15,6 @@ echo ""
 echo "⚙️ Step 2/3: Setting up configuration..."
 echo ""
 
-WANDB_ENTITY="an-20225432-hust"
-WANDB_PROJECT="ELPH-TEST"
 HF_REPO_ID="${HF_REPO_ID:-an-20225432-hust/elph-test-checkpoints}"
 
 echo "📊 Configuration:"
