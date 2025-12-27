@@ -1,0 +1,23 @@
+2025-12-27 04:26:04,639 INFO    MainThread:5837 [wandb_setup.py:_flush():80] Current SDK version is 0.23.1
+2025-12-27 04:26:04,639 INFO    MainThread:5837 [wandb_setup.py:_flush():80] Configure stats pid to 5837
+2025-12-27 04:26:04,639 INFO    MainThread:5837 [wandb_setup.py:_flush():80] Loading settings from /root/.config/wandb/settings
+2025-12-27 04:26:04,639 INFO    MainThread:5837 [wandb_setup.py:_flush():80] Loading settings from /workspace/elph/src/wandb/settings
+2025-12-27 04:26:04,639 INFO    MainThread:5837 [wandb_setup.py:_flush():80] Loading settings from environment variables
+2025-12-27 04:26:04,639 INFO    MainThread:5837 [wandb_init.py:setup_run_log_directory():714] Logging user logs to /workspace/elph/src/wandb/run-20251227_042604-hht7edk7/logs/debug.log
+2025-12-27 04:26:04,639 INFO    MainThread:5837 [wandb_init.py:setup_run_log_directory():715] Logging internal logs to /workspace/elph/src/wandb/run-20251227_042604-hht7edk7/logs/debug-internal.log
+2025-12-27 04:26:04,639 INFO    MainThread:5837 [wandb_init.py:init():841] calling init triggers
+2025-12-27 04:26:04,639 INFO    MainThread:5837 [wandb_init.py:init():846] wandb.init called with sweep_config: {}
+config: {'orthogonal_init': False, 'linear_encoder': True, 'initial_residual': False, 'predictor_layers': 1, 'dataset_name': 'ogbl-collab', 'val_pct': 0.1, 'test_pct': 0.2, 'train_samples': inf, 'val_samples': inf, 'test_samples': inf, 'preprocessing': None, 'sign_k': 0, 'load_features': False, 'load_hashes': False, 'cache_subgraph_features': True, 'train_cache_size': inf, 'year': 2007, 'model': 'ELPH', 'hidden_channels': 1024, 'batch_size': 4096, 'eval_batch_size': 1000000, 'label_dropout': 0.1, 'feature_dropout': 0.2, 'sign_dropout': 0.5, 'save_model': False, 'feature_prop': 'gcn', 'dropout': 0.5, 'num_seal_layers': 3, 'sortpool_k': 0.6, 'label_pooling': 'add', 'seal_pooling': 'edge', 'num_hops': 1, 'ratio_per_hop': 1.0, 'max_nodes_per_hop': None, 'node_label': 'drnl', 'max_dist': 4, 'max_z': 1000, 'use_feature': True, 'use_struct_feature': True, 'use_edge_weight': False, 'lr': 0.0006, 'weight_decay': 0, 'epochs': 20, 'num_workers': 4, 'num_negs': 6, 'train_node_embedding': True, 'propagate_embeddings': False, 'loss': 'rank', 'add_normed_features': True, 'use_RA': False, 'dynamic_train': False, 'dynamic_val': False, 'dynamic_test': False, 'pretrained_node_embedding': None, 'reps': 1, 'use_valedges_as_input': False, 'eval_steps': 1, 'log_steps': 1, 'eval_metric': 'hits', 'K': 50, 'use_zero_one': 0, 'floor_sf': 0, 'hll_p': 8, 'minhash_num_perm': 128, 'max_hash_hops': 2, 'subgraph_feature_batch_size': 11000000, 'wandb': True, 'use_wandb_offline': False, 'wandb_sweep': False, 'wandb_watch_grad': False, 'wandb_track_grad_flow': False, 'wandb_entity': 'an-nd225432-hust', 'wandb_project': 'ELPH', 'wandb_group': 'testing', 'wandb_run_name': 'elph-baseline-rank-6e4-neg6', 'wandb_output_dir': './wandb_output', 'wandb_log_freq': 1, 'wandb_epoch_list': [0, 1, 2, 4, 8, 16], 'log_features': False, 'hf_repo_id': 'batmangiaicuuthegioi/elph-checkpoints', '_wandb': {}}
+2025-12-27 04:26:04,639 INFO    MainThread:5837 [wandb_init.py:init():889] starting backend
+2025-12-27 04:26:04,877 INFO    MainThread:5837 [wandb_init.py:init():892] sending inform_init request
+2025-12-27 04:26:04,880 INFO    MainThread:5837 [wandb_init.py:init():900] backend started and connected
+2025-12-27 04:26:04,891 INFO    MainThread:5837 [wandb_init.py:init():970] updated telemetry
+2025-12-27 04:26:04,893 INFO    MainThread:5837 [wandb_init.py:init():994] communicating run to backend with 90.0 second timeout
+2025-12-27 04:26:05,449 INFO    MainThread:5837 [wandb_init.py:init():1041] starting run threads in backend
+2025-12-27 04:26:05,506 INFO    MainThread:5837 [wandb_run.py:_console_start():2521] atexit reg
+2025-12-27 04:26:05,506 INFO    MainThread:5837 [wandb_run.py:_redirect():2369] redirect: wrap_raw
+2025-12-27 04:26:05,506 INFO    MainThread:5837 [wandb_run.py:_redirect():2438] Wrapping output streams.
+2025-12-27 04:26:05,506 INFO    MainThread:5837 [wandb_run.py:_redirect():2461] Redirects installed.
+2025-12-27 04:26:05,508 INFO    MainThread:5837 [wandb_init.py:init():1081] run started, returning control to user process
+2025-12-27 04:26:10,084 INFO    wandb-AsyncioManager-main:5837 [service_client.py:_forward_responses():80] Reached EOF.
+2025-12-27 04:26:10,085 INFO    wandb-AsyncioManager-main:5837 [mailbox.py:close():137] Closing mailbox, abandoning 1 handles.

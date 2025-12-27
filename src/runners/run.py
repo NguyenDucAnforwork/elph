@@ -262,7 +262,6 @@ def run(args):
         path = f'{ROOT_DIR}/saved_models/{args.dataset_name}'
         torch.save(model.state_dict(), path)
 
-
 def select_model(args, dataset, emb, device):
     if args.model == 'SEALDGCNN':
         model = SEALDGCNN(args.hidden_channels, args.num_seal_layers, args.max_z, args.sortpool_k,
@@ -294,7 +293,6 @@ def select_model(args, dataset, emb, device):
     if args.model == 'DGCNN':
         print(f'SortPooling k is set to {model.k}')
     return model, optimizer
-
 
 if __name__ == '__main__':
     # Data settings

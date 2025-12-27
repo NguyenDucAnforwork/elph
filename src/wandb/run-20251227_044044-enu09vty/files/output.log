@@ -1,0 +1,51 @@
+executing on cuda
+reading data from: /workspace/elph/dataset/ogbl-collab
+looking for negative edges at /workspace/elph/dataset/ogbl-collab/negative_samples_3.pt
+negatives not found on disk. Generating negatives
+data path: /workspace/elph/dataset/ogbl-collab/ogbl_collab/elph_
+before sampling, considering a superset of 1179052 pos, 3537156 neg train edges 60084 pos, 100000 neg val edges and 46329 pos, 100000 neg test edges for supervision
+constructing training dataset object
+constructing validation dataset object
+constructing test dataset object
+/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch_geometric/data/in_memory_dataset.py:284: UserWarning: It is not recommended to directly access the internal storage format `data` of an 'InMemoryDataset'. If you are absolutely certain what you are doing, access the internal storage via `InMemoryDataset._data` instead to suppress this warning. Alternatively, you can access stacked individual attributes of every graph via `dataset.{attr_name}`.
+  warnings.warn(msg)
+/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch/_compile.py:24: UserWarning: optimizer contains a parameter group with duplicate parameters; in future, this will cause an error; see github.com/pytorch/pytorch/issues/40967 for more information
+  return torch._dynamo.disable(fn, recursive)(*args, **kwargs)
+Total number of parameters is 121654814
+Traceback (most recent call last):
+  File "/workspace/elph/src/runners/run.py", line 433, in <module>
+    run(args)
+  File "/workspace/elph/src/runners/run.py", line 187, in run
+    results = test(model, evaluator, train_eval_loader, val_loader, test_loader, args, device,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/runners/inference.py", line 32, in test
+    pos_train_pred, neg_train_pred, train_pred, train_true = test_func(model, train_loader, device, args, split='train')
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/runners/inference.py", line 205, in get_elph_preds
+    subgraph_features = model.elph_hashes.get_subgraph_features(curr_links, hashes, cards).to(device)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/hashing.py", line 271, in get_subgraph_features
+    for batch in link_loader:
+                 ^^^^^^^^^^^
+  File "/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 631, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch/utils/data/dataloader.py", line 675, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch/utils/data/_utils/fetch.py", line 54, in fetch
+    return self.collate_fn(data)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch_geometric/loader/dataloader.py", line 55, in collate_fn
+    return self(batch)
+           ^^^^^^^^^^^
+  File "/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch_geometric/loader/dataloader.py", line 40, in __call__
+    return torch.tensor(batch)
+           ^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

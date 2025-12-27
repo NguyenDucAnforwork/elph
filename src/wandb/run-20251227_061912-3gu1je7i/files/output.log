@@ -1,0 +1,54 @@
+executing on cuda
+reading data from: /workspace/elph/dataset/ogbl-collab
+looking for negative edges at /workspace/elph/dataset/ogbl-collab/negative_samples_6.pt
+loading negatives from disk
+data path: /workspace/elph/dataset/ogbl-collab/ogbl_collab/elph_
+before sampling, considering a superset of 811405 pos, 4868430 neg train edges 60084 pos, 100000 neg val edges and 46329 pos, 100000 neg test edges for supervision
+constructing training dataset object
+constructing validation dataset object
+constructing test dataset object
+/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch_geometric/data/in_memory_dataset.py:284: UserWarning: It is not recommended to directly access the internal storage format `data` of an 'InMemoryDataset'. If you are absolutely certain what you are doing, access the internal storage via `InMemoryDataset._data` instead to suppress this warning. Alternatively, you can access stacked individual attributes of every graph via `dataset.{attr_name}`.
+  warnings.warn(msg)
+/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch/_compile.py:24: UserWarning: optimizer contains a parameter group with duplicate parameters; in future, this will cause an error; see github.com/pytorch/pytorch/issues/40967 for more information
+  return torch._dynamo.disable(fn, recursive)(*args, **kwargs)
+Total number of parameters is 121259617
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:13<00:00,  3.31it/s]
+Epoch: 00, Best epoch: 0, Loss: 0.2828, Train: 10.67%, Valid: 7.45%, Test: 7.69%, epoch time: 18.5
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.42it/s]
+Epoch: 01, Best epoch: 1, Loss: 0.0421, Train: 26.42%, Valid: 20.53%, Test: 19.92%, epoch time: 18.1
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.46it/s]
+Epoch: 02, Best epoch: 2, Loss: 0.0197, Train: 40.08%, Valid: 31.30%, Test: 29.10%, epoch time: 18.0
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.41it/s]
+Epoch: 03, Best epoch: 3, Loss: 0.0128, Train: 44.27%, Valid: 33.32%, Test: 30.43%, epoch time: 18.2
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.48it/s]
+Epoch: 04, Best epoch: 4, Loss: 0.0092, Train: 46.04%, Valid: 34.29%, Test: 30.79%, epoch time: 17.9
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.40it/s]
+Epoch: 05, Best epoch: 5, Loss: 0.0069, Train: 49.85%, Valid: 36.05%, Test: 31.95%, epoch time: 18.2
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.42it/s]
+Epoch: 06, Best epoch: 5, Loss: 0.0055, Train: 50.28%, Valid: 36.05%, Test: 31.95%, epoch time: 18.2
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.45it/s]
+Epoch: 07, Best epoch: 5, Loss: 0.0045, Train: 49.21%, Valid: 36.05%, Test: 31.95%, epoch time: 18.0
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.41it/s]
+Epoch: 08, Best epoch: 8, Loss: 0.0038, Train: 50.51%, Valid: 36.06%, Test: 32.67%, epoch time: 18.2
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.44it/s]
+Epoch: 09, Best epoch: 9, Loss: 0.0033, Train: 53.91%, Valid: 38.16%, Test: 34.16%, epoch time: 18.1
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.44it/s]
+Epoch: 10, Best epoch: 9, Loss: 0.0028, Train: 53.79%, Valid: 38.16%, Test: 34.16%, epoch time: 18.0
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.42it/s]
+Epoch: 11, Best epoch: 9, Loss: 0.0025, Train: 54.06%, Valid: 38.16%, Test: 34.16%, epoch time: 18.2
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.43it/s]
+Epoch: 12, Best epoch: 12, Loss: 0.0022, Train: 60.10%, Valid: 42.26%, Test: 36.41%, epoch time: 18.1
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.43it/s]
+Epoch: 13, Best epoch: 12, Loss: 0.0019, Train: 55.69%, Valid: 42.26%, Test: 36.41%, epoch time: 18.1
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.39it/s]
+Epoch: 14, Best epoch: 12, Loss: 0.0017, Train: 55.45%, Valid: 42.26%, Test: 36.41%, epoch time: 18.3
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.42it/s]
+Epoch: 15, Best epoch: 12, Loss: 0.0015, Train: 56.09%, Valid: 42.26%, Test: 36.41%, epoch time: 18.1
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.41it/s]
+Epoch: 16, Best epoch: 12, Loss: 0.0015, Train: 56.55%, Valid: 42.26%, Test: 36.41%, epoch time: 18.2
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.41it/s]
+Epoch: 17, Best epoch: 12, Loss: 0.0013, Train: 56.02%, Valid: 42.26%, Test: 36.41%, epoch time: 18.1
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.42it/s]
+Epoch: 18, Best epoch: 12, Loss: 0.0012, Train: 56.01%, Valid: 42.26%, Test: 36.41%, epoch time: 18.1
+Training ELPH: 100%|████████████████████████████████████████████████| 44/44 [00:12<00:00,  3.42it/s]
+Epoch: 19, Best epoch: 12, Loss: 0.0011, Train: 56.82%, Valid: 42.26%, Test: 36.41%, epoch time: 18.1

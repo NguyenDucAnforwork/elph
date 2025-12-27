@@ -34,18 +34,19 @@ echo "===================="
 echo "TEST RUN - DDI BASELINE (2 EPOCHS)"
 echo "===================="
 python runners/run.py \
-  --dataset ogbl-ddi --K 20 --model ELPH --save_model \
+  --dataset ogbl-collab --K 50 --model ELPH --save_model \
   --use_feature 0 --train_node_embedding --propagate_embeddings \
-  --epochs 2 \
+  --epochs 20 \
   --batch_size 131072 \
-  --hidden_channels 128 \
+  --hidden_channels 256 \
   --label_dropout 0.25 \
-  --lr 0.0015 \
-  --num_negs 6 \
+  --lr 0.0006 \
+  --num_negs 5 \
   --sign_k 2 \
+  --max_hash_hops 3 \
   --wandb --wandb_project $WANDB_PROJECT --wandb_entity $WANDB_ENTITY \
-  --wandb_run_name test-automation-baseline \
-  --hf_repo_id $HF_REPO_ID
+  --wandb_run_name collab-depth-sweep-max-hop-3 \
+  --hf_repo_id $HF_REPO_ID --loss rank
 
 echo ""
 echo "✅ ========================================"

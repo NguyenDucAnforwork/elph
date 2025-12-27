@@ -1,0 +1,268 @@
+_wandb:
+    value:
+        cli_version: 0.23.1
+        e:
+            5bdexdyrfwqi4w1m0rxz6sofbd3760ur:
+                args:
+                    - --dataset
+                    - ogbl-collab
+                    - --K
+                    - "50"
+                    - --model
+                    - ELPH
+                    - --save_model
+                    - --use_feature
+                    - "0"
+                    - --train_node_embedding
+                    - --propagate_embeddings
+                    - --epochs
+                    - "20"
+                    - --batch_size
+                    - "131072"
+                    - --hidden_channels
+                    - "256"
+                    - --label_dropout
+                    - "0.25"
+                    - --lr
+                    - "0.0003"
+                    - --num_negs
+                    - "6"
+                    - --sign_k
+                    - "2"
+                    - --feature_prop
+                    - residual
+                    - --wandb
+                    - --wandb_project
+                    - ELPH
+                    - --wandb_entity
+                    - an-nd225432-hust
+                    - --wandb_run_name
+                    - collab-feat-prop-res-rank
+                    - --hf_repo_id
+                    - batmangiaicuuthegioi/elph-checkpoints
+                codePath: src/runners/run.py
+                codePathLocal: runners/run.py
+                cpu_count: 8
+                cpu_count_logical: 16
+                cudaVersion: "12.8"
+                disk:
+                    /:
+                        total: "21474836480"
+                        used: "3740471296"
+                email: an.nd225432@sis.hust.edu.vn
+                executable: /workspace/miniconda3/envs/elph/bin/python
+                git:
+                    commit: b066a51a1cada2ce2eb370245e3aa5ffb88be3a4
+                    remote: https://github.com/NguyenDucAnforwork/elph
+                gpu: NVIDIA GeForce RTX 3090
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Ampere
+                      cudaCores: 10496
+                      memoryTotal: "25769803776"
+                      name: NVIDIA GeForce RTX 3090
+                      uuid: GPU-795d73ce-f6b4-05d1-06d4-6ecf8255548f
+                host: 843fe4672cb8
+                memory:
+                    total: "67322249216"
+                os: Linux-6.8.0-60-generic-x86_64-with-glibc2.35
+                program: /workspace/elph/src/runners/run.py
+                python: CPython 3.12.12
+                root: /workspace/elph/src
+                startedAt: "2025-12-27T07:00:30.001433Z"
+                writerId: 5bdexdyrfwqi4w1m0rxz6sofbd3760ur
+        m:
+            - "1": epoch_step
+              "6":
+                - 3
+              "7": []
+        python_version: 3.12.12
+        t:
+            "1":
+                - 1
+                - 5
+                - 53
+                - 77
+            "2":
+                - 1
+                - 5
+                - 49
+                - 53
+                - 77
+            "3":
+                - 2
+                - 7
+                - 13
+                - 16
+            "4": 3.12.12
+            "5": 0.23.1
+            "10":
+                - 20
+            "12": 0.23.1
+            "13": linux-x86_64
+K:
+    value: 50
+add_normed_features:
+    value: null
+batch_size:
+    value: 131072
+cache_subgraph_features:
+    value: false
+dataset_name:
+    value: ogbl-collab
+dropout:
+    value: 0.5
+dynamic_test:
+    value: false
+dynamic_train:
+    value: false
+dynamic_val:
+    value: false
+epochs:
+    value: 20
+eval_batch_size:
+    value: 1000000
+eval_metric:
+    value: hits
+eval_steps:
+    value: 1
+feature_dropout:
+    value: 0.5
+feature_prop:
+    value: residual
+floor_sf:
+    value: 0
+hf_repo_id:
+    value: batmangiaicuuthegioi/elph-checkpoints
+hidden_channels:
+    value: 256
+hll_p:
+    value: 8
+initial_residual:
+    value: false
+label_dropout:
+    value: 0.25
+label_pooling:
+    value: add
+linear_encoder:
+    value: true
+load_features:
+    value: false
+load_hashes:
+    value: false
+log_features:
+    value: false
+log_steps:
+    value: 1
+loss:
+    value: bce
+lr:
+    value: 0.0003
+max_dist:
+    value: 4
+max_hash_hops:
+    value: 2
+max_nodes_per_hop:
+    value: null
+max_z:
+    value: 1000
+minhash_num_perm:
+    value: 128
+model:
+    value: ELPH
+node_label:
+    value: drnl
+num_hops:
+    value: 1
+num_negs:
+    value: 6
+num_seal_layers:
+    value: 3
+num_workers:
+    value: 4
+orthogonal_init:
+    value: false
+predictor_layers:
+    value: 1
+preprocessing:
+    value: null
+pretrained_node_embedding:
+    value: null
+propagate_embeddings:
+    value: true
+ratio_per_hop:
+    value: 1
+reps:
+    value: 1
+save_model:
+    value: true
+seal_pooling:
+    value: edge
+sign_dropout:
+    value: 0.5
+sign_k:
+    value: 2
+sortpool_k:
+    value: 0.6
+subgraph_feature_batch_size:
+    value: 11000000
+test_pct:
+    value: 0.2
+test_samples:
+    value: .inf
+train_cache_size:
+    value: .inf
+train_node_embedding:
+    value: true
+train_samples:
+    value: .inf
+use_RA:
+    value: false
+use_edge_weight:
+    value: false
+use_feature:
+    value: false
+use_struct_feature:
+    value: true
+use_valedges_as_input:
+    value: false
+use_wandb_offline:
+    value: false
+use_zero_one:
+    value: 0
+val_pct:
+    value: 0.1
+val_samples:
+    value: .inf
+wandb:
+    value: true
+wandb_entity:
+    value: an-nd225432-hust
+wandb_epoch_list:
+    value:
+        - 0
+        - 1
+        - 2
+        - 4
+        - 8
+        - 16
+wandb_group:
+    value: testing
+wandb_log_freq:
+    value: 1
+wandb_output_dir:
+    value: ./wandb_output
+wandb_project:
+    value: ELPH
+wandb_run_name:
+    value: collab-feat-prop-res-rank
+wandb_sweep:
+    value: false
+wandb_track_grad_flow:
+    value: false
+wandb_watch_grad:
+    value: false
+weight_decay:
+    value: 0
+year:
+    value: 0

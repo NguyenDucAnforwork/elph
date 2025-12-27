@@ -1,0 +1,70 @@
+executing on cuda
+reading data from: /workspace/elph/dataset/ogbl-collab
+looking for negative edges at /workspace/elph/dataset/ogbl-collab/negative_samples_6.pt
+loading negatives from disk
+data path: /workspace/elph/dataset/ogbl-collab/ogbl_collab/elph_
+before sampling, considering a superset of 1179052 pos, 4868430 neg train edges 60084 pos, 100000 neg val edges and 46329 pos, 100000 neg test edges for supervision
+constructing training dataset object
+constructing validation dataset object
+constructing test dataset object
+/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch_geometric/data/in_memory_dataset.py:284: UserWarning: It is not recommended to directly access the internal storage format `data` of an 'InMemoryDataset'. If you are absolutely certain what you are doing, access the internal storage via `InMemoryDataset._data` instead to suppress this warning. Alternatively, you can access stacked individual attributes of every graph via `dataset.{attr_name}`.
+  warnings.warn(msg)
+Total number of parameters is 297057
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.06it/s]
+Epoch: 00, Best epoch: 0, Loss: 0.5135, Train: 5.10%, Valid: 4.84%, Test: 4.99%, epoch time: 21.0
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.24it/s]
+Epoch: 01, Best epoch: 1, Loss: 0.3466, Train: 10.79%, Valid: 6.87%, Test: 7.36%, epoch time: 20.2
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.18it/s]
+Epoch: 02, Best epoch: 2, Loss: 0.2499, Train: 17.12%, Valid: 12.17%, Test: 12.41%, epoch time: 20.4
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.20it/s]
+Epoch: 03, Best epoch: 3, Loss: 0.2031, Train: 22.51%, Valid: 16.02%, Test: 15.53%, epoch time: 20.4
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.19it/s]
+Epoch: 04, Best epoch: 4, Loss: 0.1763, Train: 26.32%, Valid: 18.74%, Test: 17.67%, epoch time: 20.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.17it/s]
+Epoch: 05, Best epoch: 5, Loss: 0.1585, Train: 28.59%, Valid: 20.08%, Test: 18.36%, epoch time: 20.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.16it/s]
+Epoch: 06, Best epoch: 6, Loss: 0.1453, Train: 30.96%, Valid: 21.40%, Test: 18.69%, epoch time: 20.6
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.16it/s]
+Epoch: 07, Best epoch: 7, Loss: 0.1348, Train: 30.91%, Valid: 21.52%, Test: 19.82%, epoch time: 20.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.17it/s]
+Epoch: 08, Best epoch: 8, Loss: 0.1266, Train: 33.45%, Valid: 22.78%, Test: 19.83%, epoch time: 20.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.18it/s]
+Epoch: 09, Best epoch: 9, Loss: 0.1194, Train: 34.12%, Valid: 23.23%, Test: 20.64%, epoch time: 20.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.15it/s]
+Epoch: 10, Best epoch: 10, Loss: 0.1132, Train: 35.49%, Valid: 23.79%, Test: 20.83%, epoch time: 20.6
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.16it/s]
+Epoch: 11, Best epoch: 11, Loss: 0.1078, Train: 36.85%, Valid: 24.48%, Test: 20.98%, epoch time: 20.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.17it/s]
+Epoch: 12, Best epoch: 12, Loss: 0.1034, Train: 37.44%, Valid: 24.80%, Test: 21.12%, epoch time: 20.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.16it/s]
+Traceback (most recent call last):
+  File "/workspace/elph/src/runners/run.py", line 433, in <module>
+    run(args)
+  File "/workspace/elph/src/runners/run.py", line 187, in run
+    results = test(model, evaluator, train_eval_loader, val_loader, test_loader, args, device,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/runners/inference.py", line 32, in test
+    pos_train_pred, neg_train_pred, train_pred, train_true = test_func(model, train_loader, device, args, split='train')
+                                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/runners/inference.py", line 205, in get_elph_preds
+    subgraph_features = model.elph_hashes.get_subgraph_features(curr_links, hashes, cards).to(device)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/hashing.py", line 272, in get_subgraph_features
+    intersections = self._get_intersections(links[batch], hash_table)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/hashing.py", line 185, in _get_intersections
+    union_size = self.hll_count(unions)
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/hashing.py", line 222, in hll_count
+    lc = self._linearcounting(num_zero[idx])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/hashing.py", line 193, in _linearcounting
+    def _linearcounting(self, num_zero):
+
+KeyboardInterrupt

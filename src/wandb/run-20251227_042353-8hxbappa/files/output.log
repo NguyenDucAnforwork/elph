@@ -1,0 +1,38 @@
+executing on cuda
+reading data from: /workspace/elph/dataset/ogbl-collab
+looking for negative edges at /workspace/elph/dataset/ogbl-collab/negative_samples.pt
+loading negatives from disk
+data path: /workspace/elph/dataset/ogbl-collab/ogbl_collab/elph_
+before sampling, considering a superset of 811405 pos, 811405 neg train edges 60084 pos, 100000 neg val edges and 46329 pos, 100000 neg test edges for supervision
+constructing training dataset object
+constructing node features
+Preprocessed features in: 0.72 seconds
+looking for subgraph features in /workspace/elph/dataset/ogbl-collab/ogbl_collab/elph_trainyear_2007_subgraph_featurecache.pt
+cached subgraph features found at: /workspace/elph/dataset/ogbl-collab/ogbl_collab/elph_trainyear_2007_subgraph_featurecache.pt
+constructing validation dataset object
+constructing node features
+Traceback (most recent call last):
+  File "/workspace/elph/src/runners/run.py", line 435, in <module>
+    run(args)
+  File "/workspace/elph/src/runners/run.py", line 159, in run
+    train_loader, train_eval_loader, val_loader, test_loader = get_loaders(args, dataset, splits, directed)
+                                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/data.py", line 34, in get_loaders
+    train_dataset, val_dataset, test_dataset = get_hashed_train_val_test_datasets(dataset, train_data, val_data,
+                                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/datasets/elph.py", line 260, in get_hashed_train_val_test_datasets
+    val_dataset = HashDataset(root, 'valid', val_data, pos_val_edge, neg_val_edge, args,
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/datasets/elph.py", line 82, in __init__
+    self.x = self._preprocess_node_features(data, self.edge_index, self.edge_weight, args.sign_k)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/datasets/elph.py", line 130, in _preprocess_node_features
+    x = self._generate_sign_features(data, edge_index, edge_weight, sign_k)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/datasets/elph.py", line 103, in _generate_sign_features
+    xs = torch_sparse.spmm(edge_index, edge_weight, data.x.shape[0], data.x.shape[0], data.x)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch_sparse/spmm.py", line 27, in spmm
+    out = matrix.index_select(-2, col)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

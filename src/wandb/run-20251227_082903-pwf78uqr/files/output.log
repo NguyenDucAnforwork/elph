@@ -1,0 +1,37 @@
+executing on cuda
+reading data from: /workspace/elph/dataset/ogbl-collab
+looking for negative edges at /workspace/elph/dataset/ogbl-collab/negative_samples_6.pt
+loading negatives from disk
+data path: /workspace/elph/dataset/ogbl-collab/ogbl_collab/elph_
+before sampling, considering a superset of 1179052 pos, 4868430 neg train edges 60084 pos, 100000 neg val edges and 46329 pos, 100000 neg test edges for supervision
+constructing training dataset object
+constructing validation dataset object
+constructing test dataset object
+/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch_geometric/data/in_memory_dataset.py:284: UserWarning: It is not recommended to directly access the internal storage format `data` of an 'InMemoryDataset'. If you are absolutely certain what you are doing, access the internal storage via `InMemoryDataset._data` instead to suppress this warning. Alternatively, you can access stacked individual attributes of every graph via `dataset.{attr_name}`.
+  warnings.warn(msg)
+/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch/_compile.py:24: UserWarning: optimizer contains a parameter group with duplicate parameters; in future, this will cause an error; see github.com/pytorch/pytorch/issues/40967 for more information
+  return torch._dynamo.disable(fn, recursive)(*args, **kwargs)
+Total number of parameters is 121523041
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:16<00:00,  2.91it/s]
+Epoch: 00, Best epoch: 0, Loss: 0.4758, Train: 4.85%, Valid: 8.03%, Test: 7.75%, epoch time: 22.0
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.02it/s]
+Epoch: 01, Best epoch: 1, Loss: 0.2810, Train: 12.97%, Valid: 14.03%, Test: 11.40%, epoch time: 21.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  2.99it/s]
+Epoch: 02, Best epoch: 2, Loss: 0.1838, Train: 24.72%, Valid: 21.09%, Test: 17.38%, epoch time: 21.7
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  2.98it/s]
+Epoch: 03, Best epoch: 3, Loss: 0.1291, Train: 42.86%, Valid: 31.28%, Test: 26.06%, epoch time: 21.7
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.00it/s]
+Epoch: 04, Best epoch: 4, Loss: 0.0950, Train: 57.19%, Valid: 38.16%, Test: 32.11%, epoch time: 21.6
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.00it/s]
+Epoch: 05, Best epoch: 5, Loss: 0.0730, Train: 65.63%, Valid: 41.54%, Test: 34.80%, epoch time: 21.6
+Training ELPH:  51%|████████████████████████▌                       | 24/47 [00:08<00:07,  2.96it/s]
+Traceback (most recent call last):
+  File "/workspace/elph/src/runners/run.py", line 433, in <module>
+    run(args)
+  File "/workspace/elph/src/runners/run.py", line 172, in run
+    train_loss = train_func(model, optimizer, train_loader, args, device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/runners/train.py", line 206, in train_elph
+    node_features, hashes, cards = model(data.x.to(device), data.edge_index.to(device))
+                                         ^^^^^^^^^^^^^^^^^
+KeyboardInterrupt

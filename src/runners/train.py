@@ -43,7 +43,7 @@ def train_buddy(model, optimizer, train_loader, args, device, emb=None):
         wandb.log({"train_total_batches": len(train_loader)})
     batch_processing_times = []
     loader = DataLoader(range(len(links)), args.batch_size, shuffle=True)
-    for batch_count, indices in enumerate(tqdm(loader)):  # tqdm removed to reduce output
+    for batch_count, indices in enumerate(tqdm(loader, desc="Training", ncols=100)):
         # do node level things
         if model.node_embedding is not None:
             if args.propagate_embeddings:
@@ -70,7 +70,7 @@ def train_buddy(model, optimizer, train_loader, args, device, emb=None):
         start_time = time.time()
         optimizer.zero_grad()
         logits = model(subgraph_features, node_features, degrees[:, 0], degrees[:, 1], RA, batch_emb)
-        loss = get_loss(args.loss)(logits, labels[indices].squeeze(0).to(device))
+        loss = get_loss(args.loss)(logits, labels[indices].squeeze(0).to(device), num_neg=args.num_negs)
 
         loss.backward()
         optimizer.step()
@@ -109,11 +109,10 @@ def train(model, optimizer, train_loader, args, device, emb=None):
     else:
         train_samples = inf
     total_loss = 0
-    # pbar = tqdm(train_loader, ncols=70)  # Commented to reduce output
     if args.wandb:
         wandb.log({"train_total_batches": len(train_loader)})
     batch_processing_times = []
-    for batch_count, data in enumerate(train_loader):  # Using train_loader directly
+    for batch_count, data in enumerate(tqdm(train_loader, desc="Training", ncols=100)):
         start_time = time.time()
         optimizer.zero_grad()
         # todo this loop should no longer be hit as this function isn't called for BUDDY
@@ -194,7 +193,7 @@ def train_elph(model, optimizer, train_loader, args, device):
     # node_features, hashes, cards = model(data.x.to(device), data.edge_index.to(device))
 
     loader = DataLoader(range(len(links)), args.batch_size, shuffle=True)
-    for batch_count, indices in enumerate(loader):
+    for batch_count, indices in enumerate(tqdm(loader, desc="Training ELPH", ncols=100)):
         # do node level things
         if model.node_embedding is not None:
             if args.propagate_embeddings:
@@ -217,7 +216,7 @@ def train_elph(model, optimizer, train_loader, args, device):
         start_time = time.time()
         optimizer.zero_grad()
         logits = model.predictor(subgraph_features, batch_node_features, batch_emb)
-        loss = get_loss(args.loss)(logits, labels[indices].squeeze(0).to(device))
+        loss = get_loss(args.loss)(logits, labels[indices].squeeze(0).to(device), num_neg=args.num_negs)
 
         loss.backward()
         optimizer.step()
@@ -267,7 +266,7 @@ def validate_elph(model, val_loader, args, device):
                 subgraph_features = torch.zeros(data.subgraph_features[indices].shape).to(device)
                 
             logits = model.predictor(subgraph_features, batch_node_features, batch_emb)
-            loss = get_loss(args.loss)(logits, labels[indices].squeeze(0).to(device))
+            loss = get_loss(args.loss)(logits, labels[indices].squeeze(0).to(device), num_neg=args.num_negs)
             total_loss += loss.item() * len(indices)
             
     return total_loss / len(val_loader.dataset)
@@ -313,7 +312,7 @@ def validate_buddy(model, val_loader, args, device):
                 RA = None
             
             logits = model(subgraph_features, node_features, degrees[:, 0], degrees[:, 1], RA, batch_emb)
-            loss = get_loss(args.loss)(logits, labels[indices].squeeze(0).to(device))
+            loss = get_loss(args.loss)(logits, labels[indices].squeeze(0).to(device), num_neg=args.num_negs)
             total_loss += loss.item() * len(indices)
             
     return total_loss / len(val_loader.dataset)
@@ -395,6 +394,46 @@ def auc_loss(logits, y, num_neg=1):
     return torch.square(1 - (pos_out - neg_out)).sum()
 
 
+def rank_loss(logits, y, num_neg=1):
+    """
+    Pairwise logistic rank loss (BPR-style).
+    Separates pos/neg from logits based on labels, then computes log-rank loss.
+    Aligned with auc_loss pattern for compatibility with current shuffled batching.
+    """
+    pos_out = logits[y == 1]
+    neg_out = logits[y == 0]
+    
+    # Edge case: if no positives or negatives, return zero loss
+    if len(pos_out) == 0 or len(neg_out) == 0:
+        return torch.tensor(0.0, device=logits.device, requires_grad=True)
+    
+    # Ensure proper pairing: we need len(pos_out) * num_neg negatives
+    if len(neg_out) < len(pos_out) * num_neg:
+        # Not enough negatives, truncate positives
+        num_pos = len(neg_out) // num_neg
+        if num_pos == 0:
+            return torch.tensor(0.0, device=logits.device, requires_grad=True)
+        pos_out = pos_out[:num_pos]
+        neg_out = neg_out[:num_pos * num_neg]
+    else:
+        # Too many negatives, truncate to match positives
+        neg_out = neg_out[:len(pos_out) * num_neg]
+    
+    pos_out = torch.reshape(pos_out, (-1, 1))
+    neg_out = torch.reshape(neg_out, (-1, num_neg))
+    
+    # Improved numerical stability: clamp sigmoid output away from 0 and 1
+    diff = pos_out - neg_out
+    # Use log-sigmoid for better numerical stability
+    loss = -torch.nn.functional.logsigmoid(diff).mean()
+    
+    # Safety check for NaN
+    if torch.isnan(loss):
+        return torch.tensor(0.0, device=logits.device, requires_grad=True)
+    
+    return loss
+
+
 def bce_loss(logits, y, num_neg=1):
     return BCEWithLogitsLoss()(logits.view(-1), y.to(torch.float))
 
@@ -404,6 +443,8 @@ def get_loss(loss_str):
         loss = bce_loss
     elif loss_str == 'auc':
         loss = auc_loss
+    elif loss_str == 'rank':
+        loss = rank_loss
     else:
         raise NotImplementedError
     return loss

@@ -1,0 +1,63 @@
+executing on cuda
+reading data from: /workspace/elph/dataset/ogbl-collab
+looking for negative edges at /workspace/elph/dataset/ogbl-collab/negative_samples_6.pt
+loading negatives from disk
+data path: /workspace/elph/dataset/ogbl-collab/ogbl_collab/elph_
+before sampling, considering a superset of 1179052 pos, 4868430 neg train edges 60084 pos, 100000 neg val edges and 46329 pos, 100000 neg test edges for supervision
+constructing training dataset object
+constructing validation dataset object
+constructing test dataset object
+/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch_geometric/data/in_memory_dataset.py:284: UserWarning: It is not recommended to directly access the internal storage format `data` of an 'InMemoryDataset'. If you are absolutely certain what you are doing, access the internal storage via `InMemoryDataset._data` instead to suppress this warning. Alternatively, you can access stacked individual attributes of every graph via `dataset.{attr_name}`.
+  warnings.warn(msg)
+Total number of parameters is 297057
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.05it/s]
+Epoch: 00, Best epoch: 0, Loss: 0.2249, Train: 15.39%, Valid: 10.97%, Test: 11.14%, epoch time: 21.1
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.17it/s]
+Epoch: 01, Best epoch: 1, Loss: 0.0529, Train: 28.59%, Valid: 19.19%, Test: 17.82%, epoch time: 20.6
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.15it/s]
+Epoch: 02, Best epoch: 2, Loss: 0.0318, Train: 35.34%, Valid: 22.76%, Test: 20.21%, epoch time: 20.7
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.17it/s]
+Epoch: 03, Best epoch: 3, Loss: 0.0242, Train: 39.64%, Valid: 25.16%, Test: 22.17%, epoch time: 20.4
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.19it/s]
+Epoch: 04, Best epoch: 4, Loss: 0.0199, Train: 43.16%, Valid: 26.02%, Test: 22.83%, epoch time: 20.4
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.16it/s]
+Epoch: 05, Best epoch: 5, Loss: 0.0170, Train: 44.95%, Valid: 26.91%, Test: 23.68%, epoch time: 20.6
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.15it/s]
+Epoch: 06, Best epoch: 6, Loss: 0.0148, Train: 48.90%, Valid: 27.51%, Test: 24.69%, epoch time: 20.7
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.15it/s]
+Epoch: 07, Best epoch: 7, Loss: 0.0132, Train: 51.71%, Valid: 29.65%, Test: 25.72%, epoch time: 20.8
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.14it/s]
+Epoch: 08, Best epoch: 7, Loss: 0.0119, Train: 52.88%, Valid: 29.65%, Test: 25.72%, epoch time: 20.7
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.15it/s]
+Epoch: 09, Best epoch: 9, Loss: 0.0109, Train: 55.51%, Valid: 31.30%, Test: 27.84%, epoch time: 20.7
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.16it/s]
+Epoch: 10, Best epoch: 10, Loss: 0.0100, Train: 58.43%, Valid: 34.11%, Test: 31.09%, epoch time: 20.6
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.15it/s]
+Epoch: 11, Best epoch: 10, Loss: 0.0090, Train: 59.40%, Valid: 34.11%, Test: 31.09%, epoch time: 20.6
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.13it/s]
+Epoch: 12, Best epoch: 10, Loss: 0.0082, Train: 60.56%, Valid: 34.11%, Test: 31.09%, epoch time: 20.9
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.13it/s]
+Epoch: 13, Best epoch: 13, Loss: 0.0076, Train: 62.63%, Valid: 35.67%, Test: 32.96%, epoch time: 20.7
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.15it/s]
+Epoch: 14, Best epoch: 14, Loss: 0.0069, Train: 66.44%, Valid: 38.15%, Test: 34.55%, epoch time: 20.7
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.17it/s]
+Epoch: 15, Best epoch: 15, Loss: 0.0062, Train: 67.47%, Valid: 38.21%, Test: 35.09%, epoch time: 20.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.16it/s]
+Epoch: 16, Best epoch: 16, Loss: 0.0058, Train: 69.12%, Valid: 38.83%, Test: 35.53%, epoch time: 20.6
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.14it/s]
+Epoch: 17, Best epoch: 17, Loss: 0.0053, Train: 69.63%, Valid: 38.96%, Test: 36.20%, epoch time: 20.7
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.16it/s]
+Epoch: 18, Best epoch: 18, Loss: 0.0049, Train: 72.18%, Valid: 40.76%, Test: 37.66%, epoch time: 20.6
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:14<00:00,  3.16it/s]
+Epoch: 19, Best epoch: 18, Loss: 0.0046, Train: 72.15%, Valid: 40.76%, Test: 37.66%, epoch time: 20.5
+✅ Đã lưu model checkpoint vào: /workspace/elph/saved_models/ogbl-collab_ELPH_collab-feat-prop-res-rank-0.0005.pt
+📤 Uploading checkpoint to HuggingFace: batmangiaicuuthegioi/elph-checkpoints
+✅ Repository created/verified: batmangiaicuuthegioi/elph-checkpoints
+Processing Files (1 / 1)      : 100%|███████████████████████████████████████████████████████████████████████████████████████| 1.20MB / 1.20MB,  231kB/s  
+New Data Upload               : 100%|███████████████████████████████████████████████████████████████████████████████████████| 1.01MB / 1.01MB,  195kB/s  
+  ...t-prop-res-rank-0.0005.pt: 100%|███████████████████████████████████████████████████████████████████████████████████████| 1.20MB / 1.20MB            
+✅ Checkpoint uploaded successfully to batmangiaicuuthegioi/elph-checkpoints/checkpoints/ogbl-collab_ELPH_collab-feat-prop-res-rank-0.0005.pt
+/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/huggingface_hub/hf_api.py:9646: UserWarning: Warnings while validating metadata in README.md:
+- empty or missing yaml metadata in repo card
+  warnings.warn(f"Warnings while validating metadata in README.md:\n{message}")
+✅ README.md created/updated

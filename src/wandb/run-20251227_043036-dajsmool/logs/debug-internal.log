@@ -1,0 +1,11 @@
+{"time":"2025-12-27T04:30:37.135590356Z","level":"INFO","msg":"stream: starting","core version":"0.23.1"}
+{"time":"2025-12-27T04:30:37.434781682Z","level":"INFO","msg":"stream: created new stream","id":"dajsmool"}
+{"time":"2025-12-27T04:30:37.434843579Z","level":"INFO","msg":"handler: started","stream_id":"dajsmool"}
+{"time":"2025-12-27T04:30:37.435344434Z","level":"INFO","msg":"stream: started","id":"dajsmool"}
+{"time":"2025-12-27T04:30:37.435357469Z","level":"INFO","msg":"writer: started","stream_id":"dajsmool"}
+{"time":"2025-12-27T04:30:37.435365644Z","level":"INFO","msg":"sender: started","stream_id":"dajsmool"}
+{"time":"2025-12-27T04:30:41.081820616Z","level":"INFO","msg":"stream: closing","id":"dajsmool"}
+{"time":"2025-12-27T04:30:41.991058383Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-12-27T04:30:42.25313946Z","level":"INFO","msg":"handler: closed","stream_id":"dajsmool"}
+{"time":"2025-12-27T04:30:42.253283862Z","level":"INFO","msg":"sender: closed","stream_id":"dajsmool"}
+{"time":"2025-12-27T04:30:42.253300313Z","level":"INFO","msg":"stream: closed","id":"dajsmool"}

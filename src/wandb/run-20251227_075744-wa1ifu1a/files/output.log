@@ -1,0 +1,57 @@
+executing on cuda
+reading data from: /workspace/elph/dataset/ogbl-collab
+looking for negative edges at /workspace/elph/dataset/ogbl-collab/negative_samples_6.pt
+loading negatives from disk
+data path: /workspace/elph/dataset/ogbl-collab/ogbl_collab/elph_
+before sampling, considering a superset of 1179052 pos, 4868430 neg train edges 60084 pos, 100000 neg val edges and 46329 pos, 100000 neg test edges for supervision
+constructing training dataset object
+constructing validation dataset object
+constructing test dataset object
+/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch_geometric/data/in_memory_dataset.py:284: UserWarning: It is not recommended to directly access the internal storage format `data` of an 'InMemoryDataset'. If you are absolutely certain what you are doing, access the internal storage via `InMemoryDataset._data` instead to suppress this warning. Alternatively, you can access stacked individual attributes of every graph via `dataset.{attr_name}`.
+  warnings.warn(msg)
+/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch/_compile.py:24: UserWarning: optimizer contains a parameter group with duplicate parameters; in future, this will cause an error; see github.com/pytorch/pytorch/issues/40967 for more information
+  return torch._dynamo.disable(fn, recursive)(*args, **kwargs)
+Total number of parameters is 121655393
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:20<00:00,  2.31it/s]
+Epoch: 00, Best epoch: 0, Loss: 0.4588, Train: 5.60%, Valid: 5.72%, Test: 6.49%, epoch time: 26.4
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:19<00:00,  2.37it/s]
+Epoch: 01, Best epoch: 1, Loss: 0.2401, Train: 18.03%, Valid: 15.45%, Test: 13.48%, epoch time: 25.9
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:19<00:00,  2.36it/s]
+Epoch: 02, Best epoch: 2, Loss: 0.1252, Train: 42.19%, Valid: 31.13%, Test: 26.28%, epoch time: 26.0
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:19<00:00,  2.35it/s]
+Epoch: 03, Best epoch: 3, Loss: 0.0791, Train: 56.61%, Valid: 38.39%, Test: 33.10%, epoch time: 26.1
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:20<00:00,  2.34it/s]
+Epoch: 04, Best epoch: 4, Loss: 0.0554, Train: 67.55%, Valid: 43.30%, Test: 34.89%, epoch time: 26.1
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:20<00:00,  2.35it/s]
+Epoch: 05, Best epoch: 5, Loss: 0.0413, Train: 71.52%, Valid: 44.60%, Test: 38.19%, epoch time: 26.1
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:20<00:00,  2.34it/s]
+Epoch: 06, Best epoch: 6, Loss: 0.0323, Train: 73.64%, Valid: 45.69%, Test: 38.71%, epoch time: 26.1
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:20<00:00,  2.35it/s]
+Epoch: 07, Best epoch: 7, Loss: 0.0262, Train: 81.97%, Valid: 49.59%, Test: 42.07%, epoch time: 26.1
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:20<00:00,  2.34it/s]
+Epoch: 08, Best epoch: 7, Loss: 0.0217, Train: 79.48%, Valid: 49.59%, Test: 42.07%, epoch time: 26.2
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:20<00:00,  2.34it/s]
+Epoch: 09, Best epoch: 7, Loss: 0.0185, Train: 82.27%, Valid: 49.59%, Test: 42.07%, epoch time: 26.2
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:20<00:00,  2.34it/s]
+Epoch: 10, Best epoch: 7, Loss: 0.0159, Train: 79.03%, Valid: 49.59%, Test: 42.07%, epoch time: 26.1
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:20<00:00,  2.34it/s]
+Epoch: 11, Best epoch: 7, Loss: 0.0139, Train: 80.18%, Valid: 49.59%, Test: 42.07%, epoch time: 26.2
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:20<00:00,  2.34it/s]
+Epoch: 12, Best epoch: 12, Loss: 0.0122, Train: 86.17%, Valid: 50.72%, Test: 41.73%, epoch time: 26.1
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:20<00:00,  2.34it/s]
+Epoch: 13, Best epoch: 12, Loss: 0.0108, Train: 84.99%, Valid: 50.72%, Test: 41.73%, epoch time: 26.2
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:20<00:00,  2.31it/s]
+Epoch: 14, Best epoch: 14, Loss: 0.0097, Train: 87.54%, Valid: 51.10%, Test: 43.08%, epoch time: 26.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:20<00:00,  2.34it/s]
+Epoch: 15, Best epoch: 14, Loss: 0.0088, Train: 85.41%, Valid: 51.10%, Test: 43.08%, epoch time: 26.1
+Training ELPH:  28%|█████████████▎                                  | 13/47 [00:06<00:16,  2.12it/s]
+Traceback (most recent call last):
+  File "/workspace/elph/src/runners/run.py", line 433, in <module>
+    run(args)
+  File "/workspace/elph/src/runners/run.py", line 172, in run
+    train_loss = train_func(model, optimizer, train_loader, args, device)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/elph/src/../src/runners/train.py", line 223, in train_elph
+    total_loss += loss.item() * args.batch_size
+                  ^^^^^^^^^^^
+KeyboardInterrupt

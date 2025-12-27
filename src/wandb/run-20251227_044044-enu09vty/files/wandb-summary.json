@@ -1,0 +1,1 @@
+{"train_total_batches":288,"_timestamp":1.7668105380933895e+09,"train_batch_time":0.05986808240413666,"_runtime":97,"rep0_train_loss":0.10020846924350343,"rep0_val_loss":0.3795430094739688,"epoch":0,"train_epoch_time":86.48184418678284,"_wandb":{"runtime":97},"_step":3}

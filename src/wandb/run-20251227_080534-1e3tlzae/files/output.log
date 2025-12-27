@@ -1,0 +1,65 @@
+executing on cuda
+reading data from: /workspace/elph/dataset/ogbl-collab
+looking for negative edges at /workspace/elph/dataset/ogbl-collab/negative_samples_6.pt
+loading negatives from disk
+data path: /workspace/elph/dataset/ogbl-collab/ogbl_collab/elph_
+before sampling, considering a superset of 1179052 pos, 4868430 neg train edges 60084 pos, 100000 neg val edges and 46329 pos, 100000 neg test edges for supervision
+constructing training dataset object
+constructing validation dataset object
+constructing test dataset object
+/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch_geometric/data/in_memory_dataset.py:284: UserWarning: It is not recommended to directly access the internal storage format `data` of an 'InMemoryDataset'. If you are absolutely certain what you are doing, access the internal storage via `InMemoryDataset._data` instead to suppress this warning. Alternatively, you can access stacked individual attributes of every graph via `dataset.{attr_name}`.
+  warnings.warn(msg)
+/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/torch/_compile.py:24: UserWarning: optimizer contains a parameter group with duplicate parameters; in future, this will cause an error; see github.com/pytorch/pytorch/issues/40967 for more information
+  return torch._dynamo.disable(fn, recursive)(*args, **kwargs)
+Total number of parameters is 121259617
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:16<00:00,  2.93it/s]
+Epoch: 00, Best epoch: 0, Loss: 0.5665, Train: 5.63%, Valid: 5.64%, Test: 6.37%, epoch time: 21.9
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.03it/s]
+Epoch: 01, Best epoch: 1, Loss: 0.3449, Train: 13.02%, Valid: 9.31%, Test: 8.12%, epoch time: 21.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.00it/s]
+Epoch: 02, Best epoch: 2, Loss: 0.1940, Train: 22.62%, Valid: 18.98%, Test: 16.60%, epoch time: 21.6
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.00it/s]
+Epoch: 03, Best epoch: 3, Loss: 0.1447, Train: 24.71%, Valid: 21.22%, Test: 18.84%, epoch time: 21.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.00it/s]
+Epoch: 04, Best epoch: 4, Loss: 0.1166, Train: 26.29%, Valid: 22.41%, Test: 20.11%, epoch time: 21.6
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.02it/s]
+Epoch: 05, Best epoch: 5, Loss: 0.0980, Train: 27.16%, Valid: 22.93%, Test: 20.05%, epoch time: 21.4
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.00it/s]
+Epoch: 06, Best epoch: 6, Loss: 0.0853, Train: 28.28%, Valid: 23.79%, Test: 21.26%, epoch time: 21.6
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  2.99it/s]
+Epoch: 07, Best epoch: 7, Loss: 0.0757, Train: 29.85%, Valid: 24.82%, Test: 22.25%, epoch time: 21.6
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.02it/s]
+Epoch: 08, Best epoch: 7, Loss: 0.0685, Train: 29.62%, Valid: 24.82%, Test: 22.25%, epoch time: 21.4
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  2.99it/s]
+Epoch: 09, Best epoch: 9, Loss: 0.0627, Train: 30.23%, Valid: 25.19%, Test: 22.56%, epoch time: 21.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.00it/s]
+Epoch: 10, Best epoch: 10, Loss: 0.0578, Train: 31.05%, Valid: 25.47%, Test: 22.35%, epoch time: 21.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.04it/s]
+Epoch: 11, Best epoch: 11, Loss: 0.0538, Train: 31.61%, Valid: 25.87%, Test: 23.45%, epoch time: 21.3
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.02it/s]
+Epoch: 12, Best epoch: 12, Loss: 0.0502, Train: 32.28%, Valid: 26.27%, Test: 23.67%, epoch time: 21.4
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  2.99it/s]
+Epoch: 13, Best epoch: 12, Loss: 0.0472, Train: 31.54%, Valid: 26.27%, Test: 23.67%, epoch time: 21.6
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.00it/s]
+Epoch: 14, Best epoch: 12, Loss: 0.0446, Train: 32.42%, Valid: 26.27%, Test: 23.67%, epoch time: 21.4
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  2.99it/s]
+Epoch: 15, Best epoch: 15, Loss: 0.0422, Train: 32.68%, Valid: 26.30%, Test: 23.87%, epoch time: 21.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.01it/s]
+Epoch: 16, Best epoch: 15, Loss: 0.0397, Train: 31.19%, Valid: 26.30%, Test: 23.87%, epoch time: 21.4
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  2.99it/s]
+Epoch: 17, Best epoch: 15, Loss: 0.0375, Train: 29.24%, Valid: 26.30%, Test: 23.87%, epoch time: 21.5
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  3.02it/s]
+Epoch: 18, Best epoch: 15, Loss: 0.0354, Train: 29.15%, Valid: 26.30%, Test: 23.87%, epoch time: 21.3
+Training ELPH: 100%|████████████████████████████████████████████████| 47/47 [00:15<00:00,  2.98it/s]
+Epoch: 19, Best epoch: 15, Loss: 0.0335, Train: 27.90%, Valid: 26.30%, Test: 23.87%, epoch time: 21.5
+✅ Đã lưu model checkpoint vào: /workspace/elph/saved_models/ogbl-collab_ELPH_collab-raw-feat-and-embed-rank-0.0001.pt
+📤 Uploading checkpoint to HuggingFace: batmangiaicuuthegioi/elph-checkpoints
+✅ Repository created/verified: batmangiaicuuthegioi/elph-checkpoints
+Processing Files (1 / 1)      : 100%|███████████████████████████████████████████████████████████████████████████████████████|  244MB /  244MB, 24.4MB/s  
+New Data Upload               : 100%|███████████████████████████████████████████████████████████████████████████████████████|  243MB /  243MB, 24.3MB/s  
+  ...-and-embed-rank-0.0001.pt: 100%|███████████████████████████████████████████████████████████████████████████████████████|  244MB /  244MB            
+✅ Checkpoint uploaded successfully to batmangiaicuuthegioi/elph-checkpoints/checkpoints/ogbl-collab_ELPH_collab-raw-feat-and-embed-rank-0.0001.pt
+/workspace/miniconda3/envs/elph/lib/python3.12/site-packages/huggingface_hub/hf_api.py:9646: UserWarning: Warnings while validating metadata in README.md:
+- empty or missing yaml metadata in repo card
+  warnings.warn(f"Warnings while validating metadata in README.md:\n{message}")
+✅ README.md created/updated
